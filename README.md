@@ -11,8 +11,8 @@
 
 ## 🚀 Live Demo
 
-- **Frontend:** [framex-vision.vercel.app](https://framex-vision.vercel.app)
-- **Backend:** [framex-vision-api.render.com](https://framex-vision-api.render.com)
+- **Frontend:** [frame-x-vision.vercel.app](https://frame-x-vision.vercel.app)
+- **Backend:** [frame-x-vision.onrender.com](https://frame-x-vision.onrender.com)
 
 ---
 
@@ -43,31 +43,31 @@
 
 ## 📁 Project Structure
 
-image-analyzer/
-├── image-analyzer-back/ ← Backend
-│ ├── config/
-│ │ └── ai.js ← OpenRouter AI setup
-│ ├── controllers/
-│ │ └── analyzeController.js ← Analysis logic
-│ ├── middleware/
-│ │ └── upload.js ← Multer file handling
-│ ├── routes/
-│ │ └── analyzeRoutes.js ← API routes
-│ ├── uploads/ ← Temp image storage
-│ ├── .env.example
-│ └── server.js ← Entry point
-│
-└── image-analyzer-front/ ← Frontend
-├── src/
-│ ├── components/
-│ │ ├── ImageUploader.jsx
-│ │ ├── AnalysisResult.jsx
-│ │ └── LoadingScreen.jsx
-│ ├── pages/
-│ │ ├── LandingPage.jsx
-│ │ └── AnalyzerPage.jsx
-│ └── App.jsx
-└── .env.example
+    image-analyzer/
+    ├── image-analyzer-back/         ← Backend
+    │   ├── config/
+    │   │   └── ai.js                ← OpenRouter AI setup
+    │   ├── controllers/
+    │   │   └── analyzeController.js ← Analysis logic
+    │   ├── middleware/
+    │   │   └── upload.js            ← Multer file handling
+    │   ├── routes/
+    │   │   └── analyzeRoutes.js     ← API routes
+    │   ├── uploads/                 ← Temp image storage
+    │   ├── .env.example
+    │   └── server.js                ← Entry point
+    │
+    └── image-analyzer-front/        ← Frontend
+        ├── src/
+        │   ├── components/
+        │   │   ├── ImageUploader.jsx
+        │   │   ├── AnalysisResult.jsx
+        │   │   └── LoadingScreen.jsx
+        │   ├── pages/
+        │   │   ├── LandingPage.jsx
+        │   │   └── AnalyzerPage.jsx
+        │   └── App.jsx
+        └── .env.example
 
 ---
 
@@ -80,34 +80,26 @@ image-analyzer/
 
 ### 1. Clone the repository
 
-```bash
-git clone https://github.com/Akashdasks/framex-vision.git
-cd image-analyzer
-```
+    git clone https://github.com/Akashdasks/Frame-x-Vision.git
+    cd image-analyzer
 
 ### 2. Setup Backend
 
-```bash
-cd server
-npm install
-cp .env.example .env
-# Add your OPENROUTER_API_KEY to .env
-npm run dev
-```
+    cd image-analyzer-back
+    npm install
+    cp .env.example .env
+    npm run dev
 
 ### 3. Setup Frontend
 
-```bash
-cd image-analyzer-front
-npm install
-cp .env.example .env
-# .env already has correct default values
-npm run dev
-```
+    cd image-analyzer-front
+    npm install
+    cp .env.example .env
+    npm run dev
 
 ### 4. Open the app
 
-http://localhost:5173
+    http://localhost:5173
 
 ---
 
@@ -117,29 +109,6 @@ http://localhost:5173
 | ------ | -------------- | ------------------------- |
 | GET    | `/api/health`  | Server health check       |
 | POST   | `/api/analyze` | Analyze an uploaded image |
-
-### POST `/api/analyze`
-
-**Request:** `multipart/form-data` with `image` field
-
-**Response:**
-
-```json
-{
-  "success": true,
-  "analysis": {
-    "scene_title": "Sunset at the Beach",
-    "description": "A beautiful golden sunset...",
-    "objects": [...],
-    "people": {...},
-    "environment": {...},
-    "visual": {...},
-    "animals": [...],
-    "text_in_image": [...],
-    "interesting_facts": [...]
-  }
-}
-```
 
 ---
 
